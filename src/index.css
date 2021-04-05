@@ -1,13 +1,233 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Lato', sans-serif;
+  overflow-x: hidden;
+  min-height: 100%;
+  background: linear-gradient(to right, rgba(100,100,100,0.5), rgba(200,200,200,0.5)), url('./mountains.jpg'); 
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+a {
+  text-decoration: none;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+.navbar {
+  position: sticky;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20%;
+  height: 8vh;
+  background: #F5564E;
+  max-width: 100%;
+}
+.navbar-items {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  min-height: 100%;
+  height: 100%;
+}
+.nav-item {
+  /* min-height: 100%; */
+  margin: 0 10px;
+  /* height: 100%; */
+}
+.nav-link:hover {
+  /* min-height: 100%; */
+  text-decoration: overline;
+  transition: all 0.5s ease-in-out;
+}
+.nav-link {
+  color: #1A3163;
+  font-weight: 700;
+  /* height: 100%; */
+  /* min-height: 100%; */
+}
+.navbar-brand {
+  font-size: 2.5rem;
+}
+.navbar-brand::before {
+  content: "";
+  border: 1px solid black;
+  margin-right: 10px;
+}
+
+.sidebar {
+  width: 30%;
+  padding: 2rem;
+  box-sizing: border-box !important ;
+  background: #1A3163;
+  color: #fff;
+  position: relative;
+  /* min-height: 100%; */
+  min-height: 92vh;
+  /* height: 100%; */
+  max-height: 100%;
+  transition: 0.5s ease;
+}
+.sidebar > span {
+  position: absolute;
+  font-size: 2rem;
+  padding: 10px;
+  top: 30px;
+  right: -20px;
+  background: #F5564E;
+  border-radius: 100%;
+  z-index: 10 !important;
+}
+.sidebar > span > a {
+  color: #1A3163;
+  transition: all 0.5s ease;
+}
+.sidebar > span:hover {
+  transform: scale(1.3);
+  transition: 0.5s ease;
+}
+.container {
+  padding: 15%;
+  margin: auto;
+}
+.hire-me-list {
+  margin: 2rem auto;
+  padding-left: 20px;
+  list-style-type: disc;
+}
+.sidebar-list {
+  padding-left: 20px;
+  margin: 1rem auto;
+}
+.main-body {
+  width: 70%;
+  transition: all 0.5s ease;
+}
+.full-width {
+  /* min-width: 100vw; */
+  width: 100%;
+  transition: all 0.5s ease;
+}
+.slide-in {
+  transform: translateX(-100%); 
+}
+.slide-in i {
+  transform: rotate(180deg);
+  transition: all 0.5s ease;
+}
+main {
+  display: flex;
+  flex-direction: row;
+  min-height: 100%;
+  
+  height: 100%;
+  /* justify-content: center; */
+  /* align-items: center; */
+}
+form {
+  margin-left: 5rem;
+  margin-top: 2rem;
+}
+input {
+  padding: 8px 4px;
+  font-size: 1.5rem;
+  border-radius: 10px;
+}
+input:placeholder-shown {
+  font-weight: 700;
+}
+.btn {
+  padding: 10px 20px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  background: #F5564E;
+  cursor: pointer;
+  color: #fff;
+  font-size: 1.5rem;
+  transition: 0.5s ease-in-out;
+}
+.btn-submit {
+  margin: 0 10px;
+}
+.btn:hover {
+  background: #1A3163;
+}
+.btn:focus, .btn:target {
+  outline: none;
+}
+.showcase {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+
+}
+.showcaseItem {
+  display: block;
+  margin: 2rem;
+  padding: 5rem;
+  font-size: 1.2rem;
+  background: #F5564E;
+  transition: all 0.5s;
+}
+.showcaseItem:nth-child(3n) {
+  background: #1A3163 !important;
+  color: #fff;
+  
+}
+.showcaseItem:hover {
+  box-shadow: 2px 2px 20px #1A3163;
+  -webkit-font-smoothing: antialised;
+}
+.showcaseItem:nth-child(3n):hover {
+  box-shadow: 2px 2px 20px #F5564E;
+}
+
+@media screen and (max-width: 768px) {
+  .sidebar, .sidebar > span {
+    display: none;
+  }
+  nav {
+    justify-content: space-evenly;
+  }
+  .navbar-brand {
+    font-size: 1.5rem;
+  }
+  form {
+    margin: 2rem 1rem 0 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10% auto;
+  } 
+  .input-field {
+    font-size: 1rem;
+  }
+  .btn {
+    padding: 5px 10px;
+    font-size: 1.2rem;
+  }
+  form > .btn-submit {
+    margin: 3% auto;
+  }
+  .showcase {
+    padding: 0;
+    /* justify-content: center; */
+  }
+  .main-body {
+    width: 100%;
+  }
+ 
 }
